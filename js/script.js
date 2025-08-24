@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => { //radioButtons weren't fou
     const projectSelect = document.getElementById('project');
     const toolSelect = document.getElementById('tool');
     const outputP = document.getElementById('outputP');
+    const tryThisHeading = document.getElementById('try-this');
 
     // radio buttons event setup 
     radioButtons.forEach((radio) => {
@@ -57,7 +58,9 @@ document.addEventListener("DOMContentLoaded", () => { //radioButtons weren't fou
             'details': `Why do certain implementation details matter when building a ${projectSelect} with ${toolSelect}?`,
             'technique': `What are the step-by-step techniques for implementing a ${projectSelect} with ${toolSelect}?`
         };
-        const question = questionTemplates[topicSelected];
+        
+        const question = `${questionTemplates[topicSelected]}`;
+        tryThisHeading.textContent = `Try this:`;
         if (outputP) {
             outputP.textContent = question;
             if (outputP.textContent) {
